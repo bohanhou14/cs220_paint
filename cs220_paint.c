@@ -4,7 +4,7 @@
 #include "cs220_paint.h"
 
 unsigned char *read_image(const char *filename, int *width, int *height) {
-  // open file for reading?
+  // open file for reading
   FILE *in = fopen(filename, "rb");
   if (in == NULL) {
     return NULL;
@@ -48,7 +48,7 @@ unsigned char *read_image(const char *filename, int *width, int *height) {
   return buf;
 }
 
-
+// To write image to a text file
 int write_image(const char *filename, int width, int height, const unsigned char *buf) {
   FILE *out = fopen(filename, "w");
   
@@ -73,6 +73,7 @@ int write_image(const char *filename, int width, int height, const unsigned char
   return 1;
 }
 
+// To calculate the geometric distance
 double geom_dist(double x1, double y1, double x2, double y2) {
   return pow((pow((x1 - x2), 2) + pow((y1-y2), 2)),0.5);
 }
@@ -146,7 +147,7 @@ void render_ellipse(unsigned char *pixel_data, int img_width, int img_height,
 }
 
 
-
+// Recursive implementation
 void flood_fill(unsigned char *pixel_data, int img_width, int img_height,
                 int x, int y, int r, int g, int b) {
   int right_1 = 3;
@@ -158,7 +159,7 @@ void flood_fill(unsigned char *pixel_data, int img_width, int img_height,
 }
 
 
-
+// Helper method for flood_fill
 void rec_flood_fill(unsigned char *pixel_data, int img_width, int img_height,
                     int x, int y,
                     int orig_r, int orig_g, int orig_b,

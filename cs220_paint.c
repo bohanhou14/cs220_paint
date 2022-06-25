@@ -77,6 +77,8 @@ int write_image(const char *filename, int width, int height, const unsigned char
 double geom_dist(double x1, double y1, double x2, double y2) {
   return pow((pow((x1 - x2), 2) + pow((y1-y2), 2)),0.5);
 }
+
+// To check if this pixel is on the ellipse
 int is_ellipse(int x, int y, double f1_x, double f1_y, double f2_x, double f2_y, double len){
   double sum = geom_dist(f1_x, f1_y, f2_x, f2_y) + geom_dist(x, y, f1_x, f1_y) + geom_dist(x,y,f2_x,f2_y);
   if (sum <= len) {

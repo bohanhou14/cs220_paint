@@ -14,6 +14,8 @@ void render_rectangle(unsigned char *pixel_data, int img_width, int img_height,
 void render_ellipse(unsigned char *pixel_data, int img_width, int img_height,
                       double x1, double y1, double x2, double y2, double len,
 		    int r, int g, int b);
+
+// To determine if the ellipse is an ellipse
 int is_ellipse(int x, int y, double f1_x, double f1_y, double f2_x, double f2_y, double len);
 
 void flood_fill(unsigned char *pixel_data, int img_width, int img_height,

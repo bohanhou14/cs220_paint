@@ -1,5 +1,5 @@
 # README
-This program is my independent homework project for CS220: Intermediate Programming. I received 97.5% on this project. It is a program that takes intuitive and human-readable command and automatically paint an image. In short, it is like the drawing program on Windows. The difference is that the user would use command line instead of interacting with a graphical UI.
+This program is my independent homework project for CS220: Intermediate Programming. I received 97.5% on this project. It is a program that takes intuitive and human-readable command and automatically paint an image. In short, it is like the drawing program on Windows. The difference is that the user would pre-specify your commands in a text file instead of interacting with a graphical UI.
 
 # To start
 The cs220_paint program takes two command line arguments. The first is the filename of the command file, and the second is the filename of the output image file to create. As an example, the following invocation would process the commands in cmd/test.txt to produce the image file img/test_out.txt:

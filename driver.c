@@ -4,7 +4,7 @@
 #include "cs220_paint.h"
 
 int main(int argc, char *argv[]) {
-  // TODO: check that correct number of command line arguments were passed
+  // check that correct number of command line arguments were passed
   // report error if not
   if (argc != 3) {
     printf("Error: incorrect number of command line arguments passed.\n");
@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
     return 1;
   }
   
-
+  // Read the width and height of the frame
   int width = 0;
   int height = 0;
   fscanf(input, "%d %d", &width, &height);
@@ -33,8 +33,9 @@ int main(int argc, char *argv[]) {
 
   int rc = fscanf(input, " %c", &command); // read first command
 
+  // Continue the flow until all command are processed in the command file is processed or an error has occurred
   while (!error && rc != EOF) {
-    int r,g,b;
+    int r,g,b; // RGB of the color
     switch (command) {
     case 'c':   // set current color
       {
@@ -44,7 +45,7 @@ int main(int argc, char *argv[]) {
 
     case 'r':   // rectangle
       {
-        int x,y,w,h;
+        int x,y,w,h; // coordinate of the upper-left corner and the width and height of the rectangle
        	if(fscanf(input, " %d %d %d %d", &x, &y, &w, &h)!=4){
 	  printf("Error: invalid number of input for drawing rectangle.\n");
 	  return 1;
@@ -59,7 +60,7 @@ int main(int argc, char *argv[]) {
 
     case 'e':   // ellipse
       {
-        float x1,y1,x2,y2,length;
+        float x1,y1,x2,y2,length; //coordinates of the two focal points and the size of the ellipse
 	if(fscanf(input, " %f %f %f %f %f", &x1, &y1, &x2, &y2, &length)!=5){
 	  printf("Error: invalid number of input for drawing ellipse.\n");
 	  return 1;
